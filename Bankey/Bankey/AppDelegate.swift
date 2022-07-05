@@ -9,8 +9,11 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
   var window: UIWindow?
+    
+  let onboardingContainerViewController = OnboardingContainerViewController()
+  let loginViewController = LoginViewController()
+    let dummyViewController = DummyViewController()
   
   func application(
     _ application: UIApplication,
@@ -22,8 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.makeKeyAndVisible()
     window?.backgroundColor = .systemBackground
-//    window?.rootViewController = LoginViewController()
-    window?.rootViewController = OnboardingContainerViewController()
+      
+    loginViewController.delegate = self
+    onboardingContainerViewController.delegate = self
+      dummyViewController.logoutDelegate = self
+      
+    window?.rootViewController = loginViewController
     
     return true
     
@@ -31,3 +38,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: LoginViewControllerDelegate {
+    func didLogin() {
+        var controller: UIViewController = onboardingContainerViewController
+        
+        if LocalState.hasOnboarded {
+            controller = dummyViewController
+        }
+        
+        setRootViewController(controller)
+    }
+}
+
+extension AppDelegate: OnboardingControllerViewControllerDelegate {
+    func didFinishOnboarding() {
+        LocalState.hasOnboarded = true
+        setRootViewController(dummyViewController)
+    }
+}
+
+extension AppDelegate: LogoutDelegate {
+    func didLogout() {
+        setRootViewController(loginViewController)
+    }
+}
+
+extension AppDelegate {
+    func setRootViewController(_ vc: UIViewController, withAnimation: Bool = true) {
+        guard let window = window, withAnimation else {
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+            return
+        }
+        
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        UIView.transition(
+            with: window,
+            duration: 0.3,
+            options: .transitionCrossDissolve,
+            animations: nil,
+            completion: nil
+        )
+    }
+}
