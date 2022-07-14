@@ -27,6 +27,9 @@ class AccountSummaryViewController: UIViewController {
     private func setup() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)
+        tableView.rowHeight = AccountSummaryCell.rowHeight
+        tableView.tableFooterView = UIView()
         
         style()
         layout()
@@ -64,11 +67,16 @@ class AccountSummaryViewController: UIViewController {
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: AccountSummaryCell.reuseID,
+            for: indexPath
+        ) as? AccountSummaryCell
+    
+        guard let summaryCell = cell else {
+            fatalError("Could not instantiate AccountSummaryCell")
+        }
         
-        cell.textLabel?.text = games[indexPath.row]
-        
-        return cell
+        return summaryCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
