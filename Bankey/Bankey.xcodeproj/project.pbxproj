@@ -19,6 +19,7 @@
 		D04F64A4286A35430018B326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04F64A3286A35430018B326 /* Assets.xcassets */; };
 		D04F64A7286A35430018B326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04F64A5286A35430018B326 /* LaunchScreen.storyboard */; };
 		D04F64B1286A39820018B326 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F64B0286A39820018B326 /* LoginView.swift */; };
+		D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */; };
 		D0E2285D28734804009FAF86 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2285C28734804009FAF86 /* DummyViewController.swift */; };
 		D0E3EAB92874B70700862171 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3EAB82874B70700862171 /* LocalState.swift */; };
 		D0E3EABB2874BEED00862171 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */; };
@@ -39,6 +40,7 @@
 		D04F64A6286A35430018B326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D04F64A8286A35430018B326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04F64B0286A39820018B326 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		D0E2285C28734804009FAF86 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		D0E3EAB82874B70700862171 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				D043D56D28765D14008F0574 /* AccountSummaryCell.swift */,
+				D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				D03C9D7C2875B1E2005493C5 /* AccountSummaryHeaderView.swift in Sources */,
 				D0E2285D28734804009FAF86 /* DummyViewController.swift in Sources */,
 				D04F649F286A35400018B326 /* LoginViewController.swift in Sources */,
+				D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */,
 				D043D56E28765D14008F0574 /* AccountSummaryCell.swift in Sources */,
 				D03BE58A286E3078006CBB45 /* OnboardingViewController.swift in Sources */,
 				D00332412874FA9F0048EDF1 /* MainViewController.swift in Sources */,

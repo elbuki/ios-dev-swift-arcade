@@ -9,11 +9,13 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     
-    let games = [
-        "Pacman",
-        "Space Invaders",
-        "Space Patrol"
-    ]
+    struct Profile {
+        let firstName: String
+        let lastName: String
+    }
+    
+    var profile: Profile?
+    var accounts: [AccountSummaryCell.ViewModel] = []
     
     let tableView = UITableView()
     
@@ -34,6 +36,7 @@ class AccountSummaryViewController: UIViewController {
         style()
         layout()
         setupTableHeaderView()
+        fetchData()
     }
     
     private func style() {
@@ -67,6 +70,9 @@ class AccountSummaryViewController: UIViewController {
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard !accounts.isEmpty else { return UITableViewCell() }
+
         let cell = tableView.dequeueReusableCell(
             withIdentifier: AccountSummaryCell.reuseID,
             for: indexPath
@@ -76,11 +82,16 @@ extension AccountSummaryViewController: UITableViewDataSource {
             fatalError("Could not instantiate AccountSummaryCell")
         }
         
+        let account = accounts[indexPath.row]
+        
+        summaryCell.configure(with: account)
+        
         return summaryCell
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        games.count
+        accounts.count
     }
 }
 
@@ -88,4 +99,30 @@ extension AccountSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+}
+
+extension AccountSummaryViewController {
+    
+    private func fetchData() {
+        fetchAccounts()
+        fetchProfile()
+    }
+    
+    private func fetchAccounts() {
+        let viewModels: [AccountSummaryCell.ViewModel] = [
+            .init(accountType: .banking, accountName: "Basic Savings", balance: 929466.23),
+            .init(accountType: .banking, accountName: "No-Fee All-In Chequing", balance: 17562.44),
+            .init(accountType: .creditCard, accountName: "Visa Avion Card", balance: 412.83),
+            .init(accountType: .creditCard, accountName: "Student Mastercard", balance: 50.83),
+            .init(accountType: .investment, accountName: "Tax-Free Saver", balance: 2000.00),
+            .init(accountType: .investment, accountName: "Growth Fund", balance: 15000.00),
+        ]
+        
+        accounts = viewModels
+    }
+    
+    private func fetchProfile() {
+        profile = .init(firstName: "Kevin", lastName: "Smith")
+    }
+    
 }

@@ -6,8 +6,27 @@
 //
 
 import UIKit
+import Foundation
 
 class AccountSummaryCell: UITableViewCell {
+    
+    enum AccountType: String {
+        case banking = "Banking"
+        case creditCard = "Credit Card"
+        case investment = "Investment"
+    }
+    
+    struct ViewModel {
+        let accountType: AccountType
+        let accountName: String
+        let balance: Decimal
+        
+        var balanceAsAttributedString: NSAttributedString {
+            return CurrencyFormatter().makeAttributedCurrency(balance)
+        }
+    }
+    
+    let viewModel: ViewModel? = nil
     
     let typeLabel = UILabel()
     let underlineView = UIView()
@@ -160,5 +179,31 @@ extension AccountSummaryCell {
         rootString.append(centString)
         
         return rootString
+    }
+}
+
+extension AccountSummaryCell {
+    func configure(with vm: ViewModel) {
+        var underlineColor: UIColor
+        var balanceText: String
+        
+        typeLabel.text = vm.accountType.rawValue
+        nameLabel.text = vm.accountName
+        balanceAmountLabel.attributedText = vm.balanceAsAttributedString
+        
+        switch vm.accountType {
+        case .banking:
+            underlineColor = appColor
+            balanceText = "Current balance"
+        case .creditCard:
+            underlineColor = .systemOrange
+            balanceText = "Balance"
+        case .investment:
+            underlineColor = .systemPurple
+            balanceText = "Value"
+        }
+        
+        underlineView.backgroundColor = underlineColor
+        balanceLabel.text = balanceText
     }
 }
