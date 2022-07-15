@@ -21,6 +21,8 @@
 		D04F64B1286A39820018B326 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F64B0286A39820018B326 /* LoginView.swift */; };
 		D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */; };
 		D092A42328811D27005B8FDA /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092A42228811D27005B8FDA /* CurrencyFormatterTests.swift */; };
+		D0D8B1A2288229B80040C60A /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8B1A1288229B80040C60A /* NSNotificationName.swift */; };
+		D0D8B1A428822C870040C60A /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8B1A328822C870040C60A /* UITextField+SecureToggle.swift */; };
 		D0E2285D28734804009FAF86 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2285C28734804009FAF86 /* DummyViewController.swift */; };
 		D0E3EAB92874B70700862171 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3EAB82874B70700862171 /* LocalState.swift */; };
 		D0E3EABB2874BEED00862171 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */; };
@@ -54,6 +56,8 @@
 		D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		D092A41928811C8A005B8FDA /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D092A42228811D27005B8FDA /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
+		D0D8B1A1288229B80040C60A /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
+		D0D8B1A328822C870040C60A /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		D0E2285C28734804009FAF86 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		D0E3EAB82874B70700862171 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 			children = (
 				D0E3EAB82874B70700862171 /* LocalState.swift */,
 				D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */,
+				D0D8B1A1288229B80040C60A /* NSNotificationName.swift */,
+				D0D8B1A328822C870040C60A /* UITextField+SecureToggle.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -290,9 +296,11 @@
 				D0E3EAB92874B70700862171 /* LocalState.swift in Sources */,
 				D03C9D7C2875B1E2005493C5 /* AccountSummaryHeaderView.swift in Sources */,
 				D0E2285D28734804009FAF86 /* DummyViewController.swift in Sources */,
+				D0D8B1A428822C870040C60A /* UITextField+SecureToggle.swift in Sources */,
 				D04F649F286A35400018B326 /* LoginViewController.swift in Sources */,
 				D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */,
 				D043D56E28765D14008F0574 /* AccountSummaryCell.swift in Sources */,
+				D0D8B1A2288229B80040C60A /* NSNotificationName.swift in Sources */,
 				D03BE58A286E3078006CBB45 /* OnboardingViewController.swift in Sources */,
 				D00332412874FA9F0048EDF1 /* MainViewController.swift in Sources */,
 				D03C9D7A2875AC56005493C5 /* AccountSummaryViewController.swift in Sources */,
@@ -504,9 +512,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R2D8G8MDYK;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
