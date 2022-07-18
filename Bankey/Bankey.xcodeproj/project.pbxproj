@@ -181,10 +181,10 @@
 		D0E3EAB72874B6F700862171 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				D0D8B1A328822C870040C60A /* UITextField+SecureToggle.swift */,
 				D0E3EAB82874B70700862171 /* LocalState.swift */,
 				D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */,
 				D0D8B1A1288229B80040C60A /* NSNotificationName.swift */,
-				D0D8B1A328822C870040C60A /* UITextField+SecureToggle.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
