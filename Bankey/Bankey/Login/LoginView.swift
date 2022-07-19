@@ -37,6 +37,7 @@ class LoginView: UIView, UITextFieldDelegate {
     usernameTextField.translatesAutoresizingMaskIntoConstraints = false
     usernameTextField.placeholder = "Username"
     usernameTextField.delegate = self
+      // Username should not have the first letter capitalized
     
     passwordTextField.translatesAutoresizingMaskIntoConstraints = false
     passwordTextField.placeholder = "Password"

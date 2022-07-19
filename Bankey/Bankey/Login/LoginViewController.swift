@@ -67,7 +67,7 @@ extension LoginViewController {
     titleLabel.textAlignment = .center
     titleLabel.text = "Bankey"
       titleLabel.alpha = 0
-    
+
     descriptionLabel.font = .preferredFont(forTextStyle: .body)
     descriptionLabel.numberOfLines = 0
     descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -184,6 +184,8 @@ extension LoginViewController {
     
     errorMessageLabel.text = errorMessage
     errorMessageLabel.isHidden = false
+      shakeButton()
+      
   }
   
   private func login() -> String? {
@@ -205,6 +207,18 @@ extension LoginViewController {
     
     return nil
   }
+    
+    private func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        animation.isAdditive = true
+        
+        signInButton.layer.add(animation, forKey: "shake")
+    }
 }
 
 // MARK: - Animations
