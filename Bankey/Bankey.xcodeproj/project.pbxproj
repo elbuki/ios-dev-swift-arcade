@@ -26,6 +26,7 @@
 		D0E2285D28734804009FAF86 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2285C28734804009FAF86 /* DummyViewController.swift */; };
 		D0E3EAB92874B70700862171 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3EAB82874B70700862171 /* LocalState.swift */; };
 		D0E3EABB2874BEED00862171 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */; };
+		D0E7BE4E28865B4C000EF323 /* ShakyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7BE4D28865B4C000EF323 /* ShakyBellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D0E2285C28734804009FAF86 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		D0E3EAB82874B70700862171 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		D0E7BE4D28865B4C000EF323 /* ShakyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyBellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				D0289703286D5FB700567A95 /* Onboarding */,
 				D03C9D782875AC32005493C5 /* AccountSummary */,
 				D0E3EAB72874B6F700862171 /* Util */,
+				D0E7BE4C28865B2D000EF323 /* Components */,
 				D04F64AE286A39010018B326 /* Files */,
 			);
 			path = Bankey;
@@ -187,6 +190,14 @@
 				D0D8B1A1288229B80040C60A /* NSNotificationName.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		D0E7BE4C28865B2D000EF323 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D0E7BE4D28865B4C000EF323 /* ShakyBellView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				D0D8B1A428822C870040C60A /* UITextField+SecureToggle.swift in Sources */,
 				D04F649F286A35400018B326 /* LoginViewController.swift in Sources */,
 				D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */,
+				D0E7BE4E28865B4C000EF323 /* ShakyBellView.swift in Sources */,
 				D043D56E28765D14008F0574 /* AccountSummaryCell.swift in Sources */,
 				D0D8B1A2288229B80040C60A /* NSNotificationName.swift in Sources */,
 				D03BE58A286E3078006CBB45 /* OnboardingViewController.swift in Sources */,
