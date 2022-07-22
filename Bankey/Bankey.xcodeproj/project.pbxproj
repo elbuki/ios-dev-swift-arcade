@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D00332412874FA9F0048EDF1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00332402874FA9F0048EDF1 /* MainViewController.swift */; };
 		D0289705286D5FDC00567A95 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0289704286D5FDC00567A95 /* OnboardingContainerViewController.swift */; };
+		D031AD3A2888E96900E38738 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031AD392888E96900E38738 /* Date+Utils.swift */; };
 		D03BE58A286E3078006CBB45 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BE589286E3078006CBB45 /* OnboardingViewController.swift */; };
 		D03C9D7A2875AC56005493C5 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03C9D792875AC56005493C5 /* AccountSummaryViewController.swift */; };
 		D03C9D7C2875B1E2005493C5 /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03C9D7B2875B1E2005493C5 /* AccountSummaryHeaderView.swift */; };
@@ -27,6 +28,7 @@
 		D0E3EAB92874B70700862171 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3EAB82874B70700862171 /* LocalState.swift */; };
 		D0E3EABB2874BEED00862171 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */; };
 		D0E7BE4E28865B4C000EF323 /* ShakyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7BE4D28865B4C000EF323 /* ShakyBellView.swift */; };
+		D0FF82102889B72000EB61C5 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF820F2889B72000EB61C5 /* AccountSummaryViewController+Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 /* Begin PBXFileReference section */
 		D00332402874FA9F0048EDF1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D0289704286D5FDC00567A95 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		D031AD392888E96900E38738 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		D03BE589286E3078006CBB45 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D03C9D792875AC56005493C5 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		D03C9D7B2875B1E2005493C5 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		D0E3EAB82874B70700862171 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		D0E7BE4D28865B4C000EF323 /* ShakyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyBellView.swift; sourceTree = "<group>"; };
+		D0FF820F2889B72000EB61C5 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				D03C9D792875AC56005493C5 /* AccountSummaryViewController.swift */,
+				D0FF820F2889B72000EB61C5 /* AccountSummaryViewController+Networking.swift */,
 				D043D56B28765CC4008F0574 /* Header */,
 				D043D56C28765CE7008F0574 /* Cell */,
 			);
@@ -188,6 +193,7 @@
 				D0E3EAB82874B70700862171 /* LocalState.swift */,
 				D0E3EABA2874BEED00862171 /* UIViewController+Utils.swift */,
 				D0D8B1A1288229B80040C60A /* NSNotificationName.swift */,
+				D031AD392888E96900E38738 /* Date+Utils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -308,6 +314,8 @@
 				D03C9D7C2875B1E2005493C5 /* AccountSummaryHeaderView.swift in Sources */,
 				D0E2285D28734804009FAF86 /* DummyViewController.swift in Sources */,
 				D0D8B1A428822C870040C60A /* UITextField+SecureToggle.swift in Sources */,
+				D031AD3A2888E96900E38738 /* Date+Utils.swift in Sources */,
+				D0FF82102889B72000EB61C5 /* AccountSummaryViewController+Networking.swift in Sources */,
 				D04F649F286A35400018B326 /* LoginViewController.swift in Sources */,
 				D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */,
 				D0E7BE4E28865B4C000EF323 /* ShakyBellView.swift in Sources */,
