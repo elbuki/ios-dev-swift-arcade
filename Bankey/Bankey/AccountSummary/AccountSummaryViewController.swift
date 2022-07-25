@@ -44,7 +44,6 @@ class AccountSummaryViewController: UIViewController {
         
         setup()
         layout()
-        setUpNavigationBar()
     }
     
     private func setup() {
@@ -55,11 +54,12 @@ class AccountSummaryViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = appColor
         
+        setUpNavigationBar()
         style()
         layout()
         setupTableHeaderView()
-//        fetchAccounts()
-        fetchDataAndLoadViews()
+        fetchData()
+        // Continue on 2:30
     }
     
     private func style() {
@@ -139,31 +139,7 @@ extension AccountSummaryViewController {
 // MARK: - Networking
 extension AccountSummaryViewController {
     
-    private func fetchDataAndLoadViews() {
-        fetchProfile(forUserId: "1") { result in
-            switch result {
-            case .success(let profile):
-                self.profile = profile
-                self.configureTableHeaderView(with: profile)
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        fetchAccounts(forUserId: "1") { result in
-            switch result {
-            case .success(let accounts):
-                self.accounts = accounts
-                self.configureTableCells(with: accounts)
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    private func configureTableHeaderView(with profile: Profile) {
+    func configureTableHeaderView(with profile: Profile) {
         let vm = AccountSummaryHeaderView.ViewModel(
             welcomeMessage: "Good morning",
             name: profile.firstName,

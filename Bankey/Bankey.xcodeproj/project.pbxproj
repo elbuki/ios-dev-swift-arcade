@@ -21,6 +21,7 @@
 		D04F64A7286A35430018B326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04F64A5286A35430018B326 /* LaunchScreen.storyboard */; };
 		D04F64B1286A39820018B326 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F64B0286A39820018B326 /* LoginView.swift */; };
 		D0606034288EB8DF00503047 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0606033288EB8DF00503047 /* AccountTests.swift */; };
+		D0606036288EC00900503047 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0606035288EC00900503047 /* DataFetcher.swift */; };
 		D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */; };
 		D092A42328811D27005B8FDA /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092A42228811D27005B8FDA /* CurrencyFormatterTests.swift */; };
 		D0B97EF9288A42C300DF909B /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B97EF8288A42C300DF909B /* ProfileTests.swift */; };
@@ -60,6 +61,7 @@
 		D04F64A8286A35430018B326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04F64B0286A39820018B326 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D0606033288EB8DF00503047 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
+		D0606035288EC00900503047 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		D092A41928811C8A005B8FDA /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D092A42228811D27005B8FDA /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				D03C9D792875AC56005493C5 /* AccountSummaryViewController.swift */,
 				D0FF820F2889B72000EB61C5 /* AccountSummaryViewController+Networking.swift */,
+				D0606035288EC00900503047 /* DataFetcher.swift */,
 				D043D56B28765CC4008F0574 /* Header */,
 				D043D56C28765CE7008F0574 /* Cell */,
 			);
@@ -337,6 +340,7 @@
 				D0E2285D28734804009FAF86 /* DummyViewController.swift in Sources */,
 				D0D8B1A428822C870040C60A /* UITextField+SecureToggle.swift in Sources */,
 				D031AD3A2888E96900E38738 /* Date+Utils.swift in Sources */,
+				D0606036288EC00900503047 /* DataFetcher.swift in Sources */,
 				D0FF82102889B72000EB61C5 /* AccountSummaryViewController+Networking.swift in Sources */,
 				D04F649F286A35400018B326 /* LoginViewController.swift in Sources */,
 				D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */,
