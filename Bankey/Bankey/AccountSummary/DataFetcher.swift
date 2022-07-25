@@ -41,6 +41,7 @@ extension AccountSummaryViewController {
         
         group.notify(queue: .main) {
             self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
     
