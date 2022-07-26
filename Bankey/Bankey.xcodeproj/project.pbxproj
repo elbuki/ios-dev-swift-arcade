@@ -22,6 +22,8 @@
 		D04F64B1286A39820018B326 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F64B0286A39820018B326 /* LoginView.swift */; };
 		D0606034288EB8DF00503047 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0606033288EB8DF00503047 /* AccountTests.swift */; };
 		D0606036288EC00900503047 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0606035288EC00900503047 /* DataFetcher.swift */; };
+		D08F8BAD288F1C8F005F0E5D /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F8BAC288F1C8F005F0E5D /* SkeletonLoadable.swift */; };
+		D08F8BAF288F2666005F0E5D /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F8BAE288F2666005F0E5D /* SkeletonCell.swift */; };
 		D092A41428810A1A005B8FDA /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */; };
 		D092A42328811D27005B8FDA /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092A42228811D27005B8FDA /* CurrencyFormatterTests.swift */; };
 		D0B97EF9288A42C300DF909B /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B97EF8288A42C300DF909B /* ProfileTests.swift */; };
@@ -62,6 +64,8 @@
 		D04F64B0286A39820018B326 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D0606033288EB8DF00503047 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		D0606035288EC00900503047 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		D08F8BAC288F1C8F005F0E5D /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		D08F8BAE288F2666005F0E5D /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		D092A41928811C8A005B8FDA /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D092A42228811D27005B8FDA /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			children = (
 				D043D56D28765D14008F0574 /* AccountSummaryCell.swift */,
 				D092A41328810A1A005B8FDA /* CurrencyFormatter.swift */,
+				D08F8BAC288F1C8F005F0E5D /* SkeletonLoadable.swift */,
+				D08F8BAE288F2666005F0E5D /* SkeletonCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E3EABB2874BEED00862171 /* UIViewController+Utils.swift in Sources */,
+				D08F8BAF288F2666005F0E5D /* SkeletonCell.swift in Sources */,
 				D04F64B1286A39820018B326 /* LoginView.swift in Sources */,
 				D0E3EAB92874B70700862171 /* LocalState.swift in Sources */,
 				D03C9D7C2875B1E2005493C5 /* AccountSummaryHeaderView.swift in Sources */,
@@ -351,6 +358,7 @@
 				D00332412874FA9F0048EDF1 /* MainViewController.swift in Sources */,
 				D03C9D7A2875AC56005493C5 /* AccountSummaryViewController.swift in Sources */,
 				D04F649B286A35400018B326 /* AppDelegate.swift in Sources */,
+				D08F8BAD288F1C8F005F0E5D /* SkeletonLoadable.swift in Sources */,
 				D0289705286D5FDC00567A95 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

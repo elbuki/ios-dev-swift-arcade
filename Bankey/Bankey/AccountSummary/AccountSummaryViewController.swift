@@ -28,6 +28,8 @@ class AccountSummaryViewController: UIViewController {
     var headerView = AccountSummaryHeaderView(frame: .zero)
     let refreshControl = UIRefreshControl()
     
+    var isLoaded = false
+    
     lazy var logoutBarButtonItem: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(
             title: "Logout",
@@ -51,7 +53,15 @@ class AccountSummaryViewController: UIViewController {
     private func setup() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)
+        tableView.register(
+            AccountSummaryCell.self,
+            forCellReuseIdentifier: AccountSummaryCell.reuseID
+        )
+        tableView.register(
+            SkeletonCell.self,
+            forCellReuseIdentifier: SkeletonCell.reuseID
+        )
+        
         tableView.rowHeight = AccountSummaryCell.rowHeight
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = appColor
@@ -61,6 +71,7 @@ class AccountSummaryViewController: UIViewController {
         layout()
         setupTableHeaderView()
         setupRefreshControl()
+        setupSkeletons()
         fetchData()
         // Continue on 2:30
     }
@@ -106,23 +117,39 @@ class AccountSummaryViewController: UIViewController {
         tableView.refreshControl = refreshControl
     }
     
+    private func setupSkeletons() {
+        let row = Account.makeSkeleton()
+        
+        accounts = Array(repeating: row, count: 10)
+        
+        configureTableCells(with: accounts)
+    }
+    
 }
 
 extension AccountSummaryViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         
         guard !accountCellViewModels.isEmpty else { return UITableViewCell() }
-
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: AccountSummaryCell.reuseID,
-            for: indexPath
-        ) as? AccountSummaryCell
-    
-        guard let summaryCell = cell else {
-            fatalError("Could not instantiate AccountSummaryCell")
-        }
         
         let account = accountCellViewModels[indexPath.row]
+        let identifier = isLoaded ? AccountSummaryCell.reuseID : SkeletonCell.reuseID
+        
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: identifier,
+            for: indexPath
+        )
+        
+        if let skeletonCell = cell as? SkeletonCell, !isLoaded {
+            return skeletonCell
+        }
+    
+        guard let summaryCell = cell as? AccountSummaryCell else {
+            fatalError("Could not instantiate account summary cell: \(identifier)")
+        }
         
         summaryCell.configure(with: account)
         
@@ -149,7 +176,16 @@ extension AccountSummaryViewController {
     }
     
     @objc private func refreshContent() {
+        reset()
+        setupSkeletons()
+        tableView.reloadData()
         fetchData()
+    }
+    
+    private func reset() {
+        profile = nil
+        accounts = []
+        isLoaded = false
     }
     
 }
