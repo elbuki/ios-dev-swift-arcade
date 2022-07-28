@@ -19,7 +19,7 @@ extension AccountSummaryViewController {
             case .success(let profile):
                 self.profile = profile
             case .failure(let error):
-                print(error.localizedDescription)
+                self.displayError(for: error)
             }
             
             group.leave()
@@ -31,7 +31,7 @@ extension AccountSummaryViewController {
             case .success(let accounts):
                 self.accounts = accounts
             case .failure(let error):
-                print(error.localizedDescription)
+                self.displayError(for: error)
             }
             
             group.leave()
@@ -39,7 +39,7 @@ extension AccountSummaryViewController {
         
         group.notify(queue: .main) {
             guard let profile = self.profile else {
-                fatalError("Could not unwrap profile")
+                return
             }
             
             self.tableView.refreshControl?.endRefreshing()
@@ -48,6 +48,22 @@ extension AccountSummaryViewController {
             self.configureTableCells(with: self.accounts)
             self.tableView.reloadData()
         }
+    }
+    
+    func displayError(for error: NetworkError) {
+        var title: String
+        var message: String
+        
+        switch error {
+        case .decodingError:
+            title = "Decoding Error"
+            message = "We could not process your request. Please try again."
+        case .serverError:
+            title = "Server Error"
+            message = "Ensure you are connected to the internet. Please try again."
+        }
+
+        self.showErrorAlert(title: title, message: message)
     }
     
 }

@@ -5,7 +5,6 @@
 //  Created by Marco Carmona on 7/25/22.
 //
 
-import QuartzCore
 import UIKit
 
 protocol SkeletonLoadable {}

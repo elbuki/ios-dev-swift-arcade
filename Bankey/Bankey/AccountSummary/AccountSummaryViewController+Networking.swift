@@ -36,7 +36,7 @@ extension AccountSummaryViewController {
         ) else {
             fatalError("Could not create fetching URL")
         }
-        
+
         let request = URLSession.shared.dataTask(with: url) { data, response, error in
 
             DispatchQueue.main.async {
@@ -44,10 +44,10 @@ extension AccountSummaryViewController {
                     completion(.failure(.serverError))
                     return
                 }
-                
+
                 do {
                     let profile = try JSONDecoder().decode(Profile.self, from: data)
-                    
+
                     completion(.success(profile))
                     dump(profile)
                 } catch {
@@ -56,7 +56,7 @@ extension AccountSummaryViewController {
             }
 
         }
-        
+
         request.resume()
         
     }
